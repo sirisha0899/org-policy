@@ -1,7 +1,5 @@
 # org-policy
 
-# org-policy
-
 # Terraform GCP Organization Policies
 
 This Terraform configuration enforces key organization policies for GCP.
