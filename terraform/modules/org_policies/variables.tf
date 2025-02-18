@@ -1,0 +1,52 @@
+variable "org_id" {
+  description = "Your Google Cloud Organization ID"
+  type        = string
+}
+
+variable "policies" {
+  description = "List of organization policies."
+  type        = map(string)
+  default = {
+    iam_disable_new_member                     = "constraints/iam.disableNewMember"
+    storage_allowed_locations                  = "constraints/storage.allowedLocations"
+    compute_require_shielded_vm                = "constraints/compute.requireShieldedVM"
+    monitoring_prevent_external_monitoring     = "constraints/monitoring.preventExternalMonitoring"
+    gcp_disable_public_storage                 = "constraints/gcp.disablePublicStorage"
+    compute_vm_external_ip_access              = "constraints/compute.vmExternalIpAccess"
+    storage_enable_default_bucket              = "constraints/storage.enableDefaultBucket"
+    compute_prevent_external_load_balancers    = "constraints/compute.preventExternalLoadBalancers"
+    iam_allowed_policy_member_domains          = "constraints/iam.allowedPolicyMemberDomains"
+    iam_restrict_service_account               = "constraints/iam.restrictServiceAccount"
+    iam_managed_allowed_policy_members         = "constraints/iam.managed.allowedPolicyMembers"
+    iam_prevent_privileged_basic_roles         = "constraints/iam.managed.preventPrivilegedBasicRolesForDefaultServiceAccounts"
+    gcp_detailed_audit_logging_mode            = "constraints/gcp.detailedAuditLoggingMode"
+    cloudkms_allowed_protection_levels         = "constraints/cloudkms.allowedProtectionLevels"
+    cloudkms_disable_before_destroy            = "constraints/cloudkms.disableBeforeDestroy"
+    cloudkms_minimum_destroy_duration          = "constraints/cloudkms.minimumDestroyScheduledDuration"
+    logging_disable_stackdriver_logging        = "constraints/logging.disableStackdriverLogging"
+    logging_require_logging                    = "constraints/logging.requireLogging"
+    logging_prevent_deletion_of_audit_logs     = "constraints/logging.preventDeletionOfAuditLogs"
+    logging_enable_audit_logging               = "constraints/logging.enableAuditLogging"
+    logging_require_data_access_audit_logging  = "constraints/logging.requireDataAccessAuditLogging"
+    logging_prevent_service_account_logging    = "constraints/logging.preventServiceAccountActivityLogging"
+    logging_require_export_to_cloud_storage    = "constraints/logging.requireExportToCloudStorage"
+    logging_enable_admin_activity_logging      = "constraints/logging.enableAdminActivityLogging"
+    cloudasset_enable_asset_inventory          = "constraints/cloudasset.enableAssetInventory"
+    cloudasset_require_asset_inventory_export  = "constraints/cloudasset.requireAssetInventoryExport"
+    cloudasset_prevent_asset_inventory_deletion = "constraints/cloudasset.preventAssetInventoryDeletion"
+    cloudasset_require_asset_inventory_audit_logging = "constraints/cloudasset.requireAssetInventoryAuditLogging"
+    cloudasset_enable_resource_inventory = "constraints/cloudasset.enableResourceInventory"
+    cloudasset_require_metadata_collection = "constraints/cloudasset.requireMetadataCollection"
+    cloudasset_enable_prevent_resource_Access =  "constraints/cloudasset.preventResourceAccess"
+    cloudasset_enable_real_time_tracking       = "constraints/cloudasset.enableRealTimeAssetTracking"
+    iam_disable_service_account_key_creation   = "constraints/iam.disableServiceAccountKeyCreation"
+    compute_disable_external_ip                = "constraints/compute.disableExternalIP"
+    iam_disable_new_service_accounts           = "constraints/iam.disableNewServiceAccounts"
+    storage_enable_uniform_bucket_level_access = "constraints/storage.enableUniformBucketLevelAccess"
+    iam_enable_service_account_key_rotation    = "constraints/iam.enableServiceAccountKeyRotation"
+    data_loss_prevention_enable_data_masking   = "constraints/dataLossPrevention.enableDataMasking"
+    data_loss_prevention_enable_audit_logging  = "constraints/dataLossPrevention.enableAuditLogging"
+    compute_disable_global_load_balancing      = "constraints/compute.disableGlobalLoadBalancing"
+    storage_enable_bucket_versioning           = "constraints/storage.enableBucketVersioning"
+  }
+}
